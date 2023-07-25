@@ -223,6 +223,7 @@ MonoBehaviour:
   PathReachingRadius: 0
   OrientationSpeed: 10
   DeathDuration: 0
+  Points: 25
   SwapToNextWeapon: 0
   DelayAfterWeaponSwap: 0
   EyeColorMaterial: {fileID: 2100000, guid: 778fbfe9a7e4a96418b9312dbfc4d67c, type: 2}

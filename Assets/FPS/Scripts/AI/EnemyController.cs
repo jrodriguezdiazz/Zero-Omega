@@ -35,6 +35,9 @@ namespace Unity.FPS.AI
         [Tooltip("Delay after death where the GameObject is destroyed (to allow for animation)")]
         public float DeathDuration = 0f;
 
+        [Tooltip("The amount of points that each enemies have")]
+        public int Points;
+
 
         [Header("Weapons Parameters")] [Tooltip("Allow weapon swapping for this enemy")]
         public bool SwapToNextWeapon = false;
@@ -345,14 +348,14 @@ namespace Unity.FPS.AI
             {
                 // pursue the player
                 DetectionModule.OnDamaged(damageSource);
-                
+
                 onDamaged?.Invoke();
                 m_LastTimeDamaged = Time.time;
-            
+
                 // play the damage tick sound
                 if (DamageTick && !m_WasDamagedThisFrame)
                     AudioUtility.CreateSFX(DamageTick, transform.position, AudioUtility.AudioGroups.DamageTick, 0f);
-            
+
                 m_WasDamagedThisFrame = true;
             }
         }
@@ -371,6 +374,8 @@ namespace Unity.FPS.AI
             {
                 Instantiate(LootPrefab, transform.position, Quaternion.identity);
             }
+
+            Debug.Log($"Has eliminado a uno de los enemigos. Has obtenido {Points} puntos.");
 
             // this will call the OnDestroy function
             Destroy(gameObject, DeathDuration);
