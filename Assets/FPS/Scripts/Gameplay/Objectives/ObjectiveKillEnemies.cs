@@ -53,7 +53,7 @@ namespace Unity.FPS.Gameplay
                 string notificationText = NotificationEnemiesRemainingThreshold >= targetRemaining
                     ? "Queda un enemigo"
                     : string.Empty;
-                UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
+                // UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
             }
             else
             {
@@ -62,7 +62,7 @@ namespace Unity.FPS.Gameplay
                     ? targetRemaining + " Enemigos quedan para eliminar"
                     : string.Empty;
 
-                UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
+                // UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
             }
         }
 
